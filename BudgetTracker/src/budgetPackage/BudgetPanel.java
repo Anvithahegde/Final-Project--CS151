@@ -41,8 +41,26 @@ public class BudgetPanel extends JPanel{
         	}
         });
         
-        
-		
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 0;
+        add(budgetArea, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy = 0;
+        add(commandArea, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 1;
+        add(inputField, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy = 1;
+        add(inputButton, c);
 		
 	}
 	
