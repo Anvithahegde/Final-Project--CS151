@@ -27,8 +27,8 @@ public class Budget {
 		cleanUp();
 	}
 	
-	public void newItem(String setName, Double setValue, Boolean setPositive) {
-		BudgetList.add(new BudgetItem(setName, setValue, setPositive));
+	public void newItem(String setName, Double setValue) {
+		BudgetList.add(new BudgetItem(setName, setValue));
 	}
 	
 	public int getListSize() {

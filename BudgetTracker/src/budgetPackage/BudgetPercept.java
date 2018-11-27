@@ -16,6 +16,8 @@ public class BudgetPercept {
     protected JTextArea budgetArea; //This area is where the budget is displayed
     protected int runStatus; //Current runtime status (0:just initialized,1:Budget set,-1:Error)
     protected Budget aBudget;
+    private String nameToBe; //perspective name of a new BudgetItem, mid-declaration
+    private Double valueToBe; //perspective value of a new BudgetItem, mid-declaration
 
 	public BudgetPercept(BudgetPanel panel1, JTextArea area1, JTextArea area2) {
 		//constructor for BudgetPercept, copies key areas of BudgetPanel for later use
@@ -41,8 +43,37 @@ public class BudgetPercept {
 			}
 			runStatus++;
 		}
-		
-		
+		else if (runStatus == 1){ //if( text.toLowerCase().contains("command")){
+			if( text.toLowerCase().contains("index")){
+				//this is the index of commands
+				
+			}
+			if(text.toLowerCase().contains("new item")){
+				commandArea.append("Enter the name of the new item\n");
+				runStatus = 2;
+			}
+		}
+		else if (runStatus == 2) {  //public void newItem(String setName, Double setValue, Boolean setPositive) {
+			//entering a new budget item - name
+			nameToBe = text;
+			commandArea.append("Enter the value of the new item\n");
+			runStatus = 3;
+		}
+		else if (runStatus == 3) {
+			//entering a new budget item - value
+			try{
+				valueToBe = Double.valueOf(text).doubleValue();
+				aBudget.newItem(nameToBe, valueToBe);
+				commandArea.append("Item successfully added\n");
+				runStatus = 1;
+			}
+			catch (NumberFormatException nfe){
+				commandArea.append("Invalid value detected.\nPlease enter the value again\n");
+			}
+		}
+		if (runStatus == 1) {
+			commandArea.append("Please enter a command\n(or enter 'index' for list of commands)\n");
+		}
 		//TODO add command to update budgetArea
 		commandArea.append("> ");
 		panel.updatePanel(commandArea, budgetArea); 

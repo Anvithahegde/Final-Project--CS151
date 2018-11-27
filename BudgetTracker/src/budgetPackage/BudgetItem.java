@@ -5,10 +5,16 @@ public class BudgetItem {
 	Double value; //Value of an object in budget
 	Boolean plusMinus; //If object is revenue or expense
 	
-	public BudgetItem(String setName, Double setValue, Boolean setPositive) {
+	public BudgetItem(String setName, Double setValue) {
 		this.itemName = setName;
-		this.value = setValue;
-		this.plusMinus = setPositive;
+		if (setValue < 0) {
+			this.value = Math.abs(setValue);
+			this.plusMinus = false;
+		}
+		else {
+			this.value = setValue;
+			this.plusMinus = true;
+		}
 	}
 	public void setItemName(String setName) {
 		this.itemName = setName;
