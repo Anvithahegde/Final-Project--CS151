@@ -27,10 +27,10 @@ public class BudgetPanel extends JPanel{
 		inputField = new JTextField(20);
         commandArea = new JTextArea(25, 20); 
         commandArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(commandArea);
+        JScrollPane scrollPane = new JScrollPane(commandArea); //not integrated (TODO)
         budgetArea = new JTextArea(25, 20); 
         budgetArea.setEditable(false);
-        JScrollPane scrollPane2 = new JScrollPane(budgetArea);
+        JScrollPane scrollPane2 = new JScrollPane(budgetArea); //not integrated (TODO)
         inputButton = new JButton("Add");
         inputButton.setBounds(10, 80, 80, 25);
         inputButton.addActionListener(new ActionListener() {

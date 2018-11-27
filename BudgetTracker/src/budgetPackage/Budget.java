@@ -14,14 +14,14 @@ public class Budget {
 		fileExists = fInterface.CheckFile(nameInput);
 		if (fileExists = true) {
 			//load the file
+			
 		}
-		
 	}
 	
 	public void finishingTouches() {
 		//setDefaultCloseOperation(Budget.finishingTouches())
 		//intended to save the current Budget after closing the window
-		//todo
+		//TODO
 		cleanUp();
 	}
 	
@@ -56,7 +56,7 @@ public class Budget {
 			System.out.println("Error: setValue nullPoint, id = " + id + ", value to set = " + newValue);
 			return;
 		}
-		// toDo - add some update function when V = 0?
+		// TODO - add some update function when V = 0?
 	}
 	
 	public void removeItem(int id) {
