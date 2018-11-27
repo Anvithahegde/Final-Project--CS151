@@ -12,6 +12,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class BudgetFileInterface {
+	
+	//NOTE: This class has not been fully integrated with this project yet.
+	
+	
 	public void CreateFile(){
 		//Creates a blank file, if one does not already exist
 		try {

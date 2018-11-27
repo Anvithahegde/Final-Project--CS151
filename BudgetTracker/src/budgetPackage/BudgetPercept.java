@@ -9,8 +9,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class BudgetPercept {
-	//This class interfaces between Budget and BudgetPanel, 
-	//altering Budget according to user command and altering the UI to reflect the Budget status
+	/**This class interfaces between Budget and BudgetPanel,
+	 * altering Budget according to user command and altering the UI to reflect the Budget status
+	 */
 	private BudgetPanel panel; //Panel and Percept have each other as properties, allowing them to easily use each other
     protected JTextArea commandArea; //This area is where commands are copied, and instructions are shown
     protected JTextArea budgetArea; //This area is where the budget is displayed
@@ -20,6 +21,9 @@ public class BudgetPercept {
     private Double valueToBe; //perspective value of a new BudgetItem, mid-declaration
 
 	public BudgetPercept(BudgetPanel panel1, JTextArea area1, JTextArea area2) {
+		/**
+		 * 
+		 */
 		//constructor for BudgetPercept, copies key areas of BudgetPanel for later use
 		this.panel = panel1;
 		this.commandArea = area1;
@@ -79,7 +83,6 @@ public class BudgetPercept {
 		panel.updatePanel(commandArea, budgetArea); 
 		//this is effectively the "return" of dataEntry, updating the UI with current information
 	}
-	
 	
 	
 }
