@@ -22,8 +22,10 @@ public class BudgetPanel extends JPanel{
 	public BudgetPanel() {
 		//constructor for the JPanel. 
 		//(this will be overhauled at a later time)
-		super(new GridBagLayout());
+		GridBagLayout gridbag = new GridBagLayout();
+		//super(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
+		this.setLayout(gridbag);
 		inputField = new JTextField(20);
         commandArea = new JTextArea(25, 20); 
         commandArea.setEditable(false);
@@ -44,11 +46,23 @@ public class BudgetPanel extends JPanel{
         c.gridx = 0;
         c.gridy = 0;
         add(budgetArea, c);
+//        c.fill = GridBagConstraints.BOTH;
+//        c.weightx = 0.05;
+//        c.gridx = (int) 0.9;
+//        c.gridy = 0;
+//        gridbag.setConstraints(scrollPane2, c);
+        add(scrollPane2);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 0;
         add(commandArea, c);
+//        c.fill = GridBagConstraints.BOTH;
+//        c.weightx = 0.05;
+//        c.gridx = (int) 1.9;
+//        c.gridy = 0;
+//        gridbag.setConstraints(scrollPane, c);
+        add(scrollPane);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 0;

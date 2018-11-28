@@ -61,6 +61,16 @@ public class Budget {
 		// TODO - add some update function when V = 0?
 	}
 	
+	public int removeByName(String toRemove) {
+		for (int i = 0; i < BudgetList.size(); i++) {
+			if (BudgetList.get(i).getItemName().equals(toRemove)){
+				BudgetList.remove(i);
+				return 1;
+			}
+		}
+		return -1;
+	}
+	
 	public void removeItem(int id) {
 		//Removes id from the list
 		id--;
@@ -124,5 +134,10 @@ public class Budget {
 		return tally;
 	}
 	
-	
+	public void debugCheck() {
+		for (int i = 0; i < BudgetList.size(); i++) {
+			System.out.print("Item " + (i + 1) + ": " + BudgetList.get(i).getItemName() + "," + BudgetList.get(i).getItemValue());
+			System.out.println();
+		}
+	}
 }
