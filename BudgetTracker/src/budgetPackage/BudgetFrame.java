@@ -1,9 +1,15 @@
 package budgetPackage;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class BudgetFrame extends JFrame{
+
+	private static final long serialVersionUID = 1L;
 
 	public BudgetFrame(JPanel thisPanel) {
 		//JFrame, contains the JPanel. That is all.
@@ -11,6 +17,6 @@ public class BudgetFrame extends JFrame{
         add(thisPanel);
         pack();
         setVisible(true);
+        setResizable(false);
 	}
-	
 }
