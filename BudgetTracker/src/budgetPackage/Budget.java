@@ -13,10 +13,20 @@ public class Budget {
 	public Budget(String nameInput) {
 		this.BudgetList = new ArrayList<BudgetItem>();
 		this.customerName = nameInput;
-		this.fileExists = false; //fInterface.CheckFile(nameInput);
-		if (fileExists == true) {
+		//this.fileExists = false; //fInterface.CheckFile(nameInput);
+		//if (fileExists == true) {
 			//load the file
-			
+		String fileName = "BudgetDatabase";
+		
+		try{
+			File f = new File(fileName);
+			if(f.exists() == false) {
+				f.createNewFile();
+				fileExists = true;
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
 		}
 	}
 	
