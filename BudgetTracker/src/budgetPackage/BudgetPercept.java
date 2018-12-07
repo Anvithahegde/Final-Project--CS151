@@ -81,6 +81,10 @@ public class BudgetPercept {
 				commandArea.append("EEEEEEEEEEEEEEEEEEEEEEE\nEEEEEEEEEEEEEEEEEEEEEEE\nEEEEEEEEEEEEEEEEEEEEEEE\n");
 				commandArea.append("EEEEEEEEEEEEEEEEEEEEEEE\nEEEEEEEEEEEEEEEEEEEEEEE\nEEEEEEEEEEEEEEEEEEEEEEE\n");
 			}
+			if(text.toLowerCase().contains("quit")){
+				//exit the application
+				System.exit(1);
+			}
 		}
 		else if (runStatus == 2) {  //Entering name of a new budget item
 			//entering a new budget item - name
