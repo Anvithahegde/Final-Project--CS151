@@ -3,6 +3,7 @@ package budgetPackage;
 import javax.swing.JPanel;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -42,6 +43,14 @@ public abstract class Popup extends JPanel{
 	public void WeightXY(int x, int y) {
 		gbc.weightx = x;
 		gbc.weighty = y;
+	}
+	
+	protected void setLayout(Component c, int x, int y, int xx, int yy) {
+		GridXY(x,y);
+		WeightXY(xx,yy);
+		gbc.fill = GridBagConstraints.BOTH;
+		c.setFont(new Font("Ariel",Font.PLAIN, 20));
+		this.add(c,gbc);
 	}
 	
 	protected void closeThisFrame() {

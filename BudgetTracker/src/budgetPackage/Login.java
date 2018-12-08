@@ -40,14 +40,14 @@ public class Login extends Popup{
 		    public void keyReleased(KeyEvent e) {
 		    }
 		});
-		setLayout(inputField,0,1);
+		setLayout(inputField,0,1,1,1);
 		textArea = new JTextArea();
 		textArea.setEditable(false);
 		textArea.setText("Enter a username please");
-		setLayout(textArea,0,0);
+		setLayout(textArea,0,0,1,1);
 		inputButton = new JButton();
 		inputButton.setText("Enter");
-		setLayout(inputButton,0,2);
+		setLayout(inputButton,0,2,1,1);
 		inputButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String text = inputField.getText();
@@ -67,13 +67,7 @@ public class Login extends Popup{
 		System.exit(1);
 	}
 	
-	private void setLayout(Component c, int x, int y) {
-		GridXY(x,y);
-		WeightXY(1,1);
-		gbc.fill = GridBagConstraints.BOTH;
-		c.setFont(new Font("Ariel",Font.PLAIN, 20));
-		this.add(c,gbc);
-	}
+	
 	
 	private void processName(String enteredName) {
 		System.out.println("Processing: " + enteredName);
