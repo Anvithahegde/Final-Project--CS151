@@ -10,7 +10,7 @@ import javax.swing.border.EtchedBorder;
 public class BudgetPanel extends JPanel{
 
 
-	private BudgetPercept percept; //Panel and Precept have each other as properties, allowing them to easily use each other
+	private BudgetPerceptOld percept; //Panel and Precept have each other as properties, allowing them to easily use each other
 	protected JTextField inputField; //This field is where commands are entered
     protected JTextArea commandArea; //This area is where commands are copied, and instructions are shown
     protected JTextArea budgetArea; //This area is where the budget is displayed
@@ -57,7 +57,7 @@ public class BudgetPanel extends JPanel{
         c.gridy = 1;
         add(inputButton, c);
         
-        this.percept = new BudgetPercept(this, this.commandArea, this.budgetArea);
+        this.percept = new BudgetPerceptOld(this, this.commandArea, this.budgetArea);
         
        
 	}

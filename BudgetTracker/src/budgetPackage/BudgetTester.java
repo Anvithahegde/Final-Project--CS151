@@ -4,7 +4,9 @@ public class BudgetTester {
 
 	
 	public static void main(String[] args) {
-		Popup Test = new MainPanel();
+		BudgetPercept teser = new BudgetPercept();
+		//Popup Test = new MainPanel();//Login
+		//Popup login = new Login();//Login
 		//BudgetThread testThread = new BudgetThread();
 		//testThread.run();
 	}

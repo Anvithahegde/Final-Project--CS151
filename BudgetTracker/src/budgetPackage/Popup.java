@@ -16,11 +16,12 @@ import javax.swing.JFrame;
 public abstract class Popup extends JPanel{
 	private JFrame thisFrame;
 	GridBagConstraints gbc;
+	BudgetPercept percept;
 	
 	
 	public abstract void setContents();
 	public abstract Dimension objectSize();
-	public abstract void frameAbort();
+	//public abstract void frameAbort();
 	
 	public Popup() {
 		this.setLayout(new GridBagLayout());  
@@ -45,15 +46,21 @@ public abstract class Popup extends JPanel{
 		gbc.weighty = y;
 	}
 	
-	protected void setLayout(Component c, int x, int y, int xx, int yy) {
-		GridXY(x,y);
-		WeightXY(xx,yy);
-		gbc.fill = GridBagConstraints.BOTH;
+	protected void setLayout(Component c, int x, int y, int xx, int yy) {//, int xx, int yy
+		gbc.gridx = x;
+		gbc.gridy = y;
+		gbc.gridwidth = xx;
+		gbc.gridheight = yy;
+		gbc.fill = GridBagConstraints.BOTH;//HORIZONTAL
 		c.setFont(new Font("Ariel",Font.PLAIN, 20));
 		this.add(c,gbc);
 	}
 	
 	protected void closeThisFrame() {
 		thisFrame.dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
+	}
+	
+	public void setPointer(BudgetPercept p) {
+		this.percept = p;
 	}
 }

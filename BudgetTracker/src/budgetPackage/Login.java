@@ -17,19 +17,22 @@ import javax.swing.JTextField;
 
 public class Login extends Popup{
 
+
 	protected JTextField inputField; //This field is where commands are entered
     protected JTextArea textArea; 
     protected JButton inputButton;
 	
 	@Override
 	public void setContents() {
+		WeightXY(1,1);
 		inputField = new JTextField(20);
 		inputField.addKeyListener(new KeyListener(){
 		    public void keyPressed(KeyEvent e){
 		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
 		        	String text = inputField.getText();
 					if (text != ""){
-						processName(text);
+						percept.userEntry(text);
+						closeThisFrame();
 					}
 		        }
 		    }
@@ -40,6 +43,7 @@ public class Login extends Popup{
 		    public void keyReleased(KeyEvent e) {
 		    }
 		});
+		
 		setLayout(inputField,0,1,1,1);
 		textArea = new JTextArea();
 		textArea.setEditable(false);
@@ -52,7 +56,8 @@ public class Login extends Popup{
 			public void actionPerformed(ActionEvent e) {
 				String text = inputField.getText();
 				if (text != ""){
-					processName(text);
+					percept.userEntry(text);
+					closeThisFrame();
 				}
 			}
 		});
@@ -62,10 +67,10 @@ public class Login extends Popup{
 		return new Dimension (300,180);
 	}
 
-	public void frameAbort() {
-		System.out.println("Proper closing sequence");
-		System.exit(1);
-	}
+//	public void frameAbort() {
+//		System.out.println("Proper closing sequence");
+//		System.exit(1);
+//	}
 	
 	
 	
