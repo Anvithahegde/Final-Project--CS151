@@ -77,6 +77,7 @@ public class Login extends Popup{
 	
 	private void processName(String enteredName) {
 		System.out.println("Processing: " + enteredName);
+		closeThisFrame();
 	}
 	
 	

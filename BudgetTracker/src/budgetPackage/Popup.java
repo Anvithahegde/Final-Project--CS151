@@ -44,4 +44,7 @@ public abstract class Popup extends JPanel{
 		gbc.weighty = y;
 	}
 	
+	protected void closeThisFrame() {
+		thisFrame.dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
+	}
 }
