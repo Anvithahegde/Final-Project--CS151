@@ -4,8 +4,9 @@ public class BudgetTester {
 
 	
 	public static void main(String[] args) {
-		BudgetThread testThread = new BudgetThread();
-		testThread.run();
+		Popup LoginTest = new Login();
+		//BudgetThread testThread = new BudgetThread();
+		//testThread.run();
 	}
 
 }

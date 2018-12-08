@@ -47,7 +47,7 @@ public class BudgetPanel extends JPanel{
         c.gridy = 0;
         setBudgetArea();
         add(budgetWrapper, c);
-        inputButton = new JButton("Add");
+        inputButton = new JButton("Enter");
         inputButton.setBounds(10, 80, 80, 25);
         inputButton.addActionListener(buttonListener);
         //getRootPane().setDefaultButton(inputButton);

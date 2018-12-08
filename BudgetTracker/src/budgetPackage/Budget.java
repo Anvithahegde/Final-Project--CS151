@@ -8,7 +8,7 @@ public class Budget {
 	ArrayList<BudgetItem> BudgetList;
 	BudgetFileInterface fInterface;
 	boolean fileExists;
-	
+	Double budgetLimit;
 
 	
 	public Budget(String nameInput) {
