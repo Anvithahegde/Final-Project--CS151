@@ -15,13 +15,13 @@ public class MainPanel extends Popup{
 
 	public void setContents() {
 		summeryPanel = new JTextField();
-		setLayout(summeryPanel,0,0,1,1/4);
+		setLayout(summeryPanel,0,0,1,1);
 		innerPanel = new JPanel();
-		setLayout(innerPanel, 0, 1,1,1/2);
+		setLayout(innerPanel, 0, 1,1,1);
 		creationButton = new JButton();
-		setLayout(creationButton, 0, 2,1/2,1/4);
+		setLayout(creationButton, 0, 2,1,1);
 		saveButton = new JButton();
-		setLayout(saveButton, 1, 2,1/2,1/4);
+		setLayout(saveButton, 1, 2,1,1);
 		
 	}
 
