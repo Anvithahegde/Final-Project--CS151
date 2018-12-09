@@ -8,6 +8,8 @@ public class BudgetPercept {
 	String username;
 	
 	public BudgetPercept() {
+		//This is the initializing phase, the login will be created 
+		//(or another component in debug mode)
 		if (debugmode == 0) {
 			Popup login = new Login();
 			login.setPointer(this);
@@ -18,9 +20,10 @@ public class BudgetPercept {
 	}
 	
 	public void userEntry(String name) {
+		//This is when username is declared (through Login())
+		//Budget is instantiated, mainpanel is initialized
 		username = name;
 		aBudget = new Budget(name);
-		System.out.println(username);
 		Popup panelTest = new MainPanel();
 		panelTest.setPointer(this);
 	}
@@ -28,10 +31,11 @@ public class BudgetPercept {
 	
 	
 	public void saveData() {
-		
+		//Triggered by saveButton in mainPanel, records current data in file
 	}
 	
 	public ArrayList<BudgetItem> fetchBudget(){
+		//used to pass the BudgetList to SubPanel
 		return aBudget.BudgetList;
 	}
 	

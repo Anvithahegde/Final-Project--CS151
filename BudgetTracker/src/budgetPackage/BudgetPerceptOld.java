@@ -12,7 +12,7 @@ public class BudgetPerceptOld {
 	/**This class interfaces between Budget and BudgetPanel,
 	 * altering Budget according to user command and altering the UI to reflect the Budget status
 	 */
-	private BudgetPanel panel; //Panel and Percept have each other as properties, allowing them to easily use each other
+	private BudgetPanelOld panel; //Panel and Percept have each other as properties, allowing them to easily use each other
     protected JTextArea commandArea; //This area is where commands are copied, and instructions are shown
     protected JTextArea budgetArea; //This area is where the budget is displayed
     protected int runStatus; //Current runtime status (0:just initialized,1:Budget set,-1:Error)
@@ -20,7 +20,7 @@ public class BudgetPerceptOld {
     private String nameToBe; //perspective name of a new BudgetItem, mid-declaration
     private Double valueToBe; //perspective value of a new BudgetItem, mid-declaration
 
-	public BudgetPerceptOld(BudgetPanel panel1, JTextArea area1, JTextArea area2) {
+	public BudgetPerceptOld(BudgetPanelOld panel1, JTextArea area1, JTextArea area2) {
 		/**
 		 * 
 		 */

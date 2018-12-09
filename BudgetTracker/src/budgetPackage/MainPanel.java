@@ -1,13 +1,11 @@
 package budgetPackage;
 
-import java.awt.Color;
-import java.awt.Component;
+
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -25,6 +23,7 @@ public class MainPanel extends Popup{
 	private double curLimit;
 
 	public void setContents() {
+		//This lays out the contents of MainPanel, assembling the UI and attaching listeners
 		curLimit = 0;
 		WeightXY(1,1);
 		summeryPanel = new JTextArea();
@@ -32,10 +31,10 @@ public class MainPanel extends Popup{
 		limitPanel1 = new JTextArea();
 		limitPanel1.setText("Current Limit:");
 		limitPanel1.setEditable(false);
-		//limitPanel1.setBackground(Color.BLUE);
 		setLayout(limitPanel1,0,1,1,1,10);
 		limitPanel2 = new JTextField();
 		limitPanel2.addKeyListener(new KeyListener(){
+			//This listener is used for declaring new "limit" values (aka curLimit)
 		    public void keyPressed(KeyEvent e){
 		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
 		        	try {
@@ -43,28 +42,19 @@ public class MainPanel extends Popup{
 		        		refreshLimit();
 		        	}
 		        	catch (NumberFormatException error){
+		        		//limitPanel2.getText() cannot be parsed to Double; reset to last value
 		        		refreshLimit();
-		        	}
-		        	
-		        }
-		    }
-			@Override
-			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
-			}
-			@Override
+		        	}}}
+			public void keyTyped(KeyEvent e) {}
 			public void keyReleased(KeyEvent e) {
 			}});
-		//limitPanel2.setBackground(Color.RED);
 		setLayout(limitPanel2,1,1,1,1,10);
 		limitPanel3 = new JTextArea();
 		limitPanel3.setText("Limit remaining:");
 		limitPanel3.setEditable(false);
-		//limitPanel3.setBackground(Color.GREEN);
 		setLayout(limitPanel3,2,1,1,1,10);
 		limitPanel4 = new JTextArea();
 		limitPanel4.setEditable(false);
-		//limitPanel4.setBackground(Color.pink);
 		setLayout(limitPanel4,3,1,1,1,10);
 		innerPanel = new SubPanel(percept);
 		gbc.ipady = 250;
@@ -75,7 +65,7 @@ public class MainPanel extends Popup{
 		creationButton.setText("New Item");
 		creationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Creationbutton responds");
+				//This button triggers the creation of a new BugetItem
 			}
 		});
 		setLayout(creationButton,0,4,2,1,20);
@@ -83,15 +73,12 @@ public class MainPanel extends Popup{
 		saveButton.setText("Save");
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Savebutton responds");
+				//This button triggers the saving of current data
 				percept.saveData();
-			}
-		});
+			}});
 		setLayout(saveButton,2,4,2,1,20);
-		
 	}
 
-	@Override
 	public Dimension objectSize() {
 		return new Dimension (300,500);
 	}
@@ -99,14 +86,6 @@ public class MainPanel extends Popup{
 	public void refreshLimit() {
 		Double curRemaining = curLimit;
 		limitPanel2.setText(Double.toString(curLimit));
-		limitPanel4.setText(Double.toString(curRemaining));
-		
+		limitPanel4.setText(Double.toString(curRemaining));	
 	}
-//	@Override
-//	public void frameAbort() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-
 }

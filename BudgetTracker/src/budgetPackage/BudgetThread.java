@@ -8,7 +8,7 @@ public class BudgetThread {
 	}
  
 	public void run() {
-		BudgetFrame mainPanel = new BudgetFrame(new BudgetPanel());
+		BudgetFrame mainPanel = new BudgetFrame(new BudgetPanelOld());
 	}
 	
 	

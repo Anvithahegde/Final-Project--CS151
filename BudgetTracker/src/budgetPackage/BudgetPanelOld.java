@@ -7,7 +7,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 
-public class BudgetPanel extends JPanel{
+public class BudgetPanelOld extends JPanel{
 
 
 	private BudgetPerceptOld percept; //Panel and Precept have each other as properties, allowing them to easily use each other
@@ -18,7 +18,7 @@ public class BudgetPanel extends JPanel{
     private JPanel commandWrapper;
     private JPanel budgetWrapper;
     
-	public BudgetPanel() {
+	public BudgetPanelOld() {
 		
 		GridBagLayout gridbag = new GridBagLayout();
 		GridBagConstraints c = new GridBagConstraints();
