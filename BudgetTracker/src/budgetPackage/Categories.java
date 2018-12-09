@@ -18,6 +18,7 @@ public class Categories{
         JFrame frame = new JFrame("Budget Tracker");  // Setting title of the JFrame
         frame.setVisible(true);                          // Setting visibility of the JFrame
         frame.setBounds(200,100,700,600 );    // Setting location and size of the JFrame
+        //XY = 200,100; width = 700, height = 600
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container c= frame.getContentPane();   // Creating an object of the Container class
@@ -166,9 +167,9 @@ public class Categories{
     /**
      * @param args
      */
-    public static void main(String[] args) {
-        new Categories();
-
-    }
+//    public static void main(String[] args) {
+//        new Categories();
+//
+//    }
 
 }

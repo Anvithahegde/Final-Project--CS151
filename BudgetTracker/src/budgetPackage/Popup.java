@@ -18,6 +18,7 @@ public abstract class Popup extends JPanel{
 	
 	public abstract void setContents(); //main initialization
 	public abstract Dimension objectSize();
+	//public abstract void setWindowListener();
 	
 	public Popup() {
 		//Declare GridBagLayout, GridBagConstraints

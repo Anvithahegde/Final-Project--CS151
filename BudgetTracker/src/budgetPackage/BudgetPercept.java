@@ -24,9 +24,9 @@ public class BudgetPercept {
 		//Budget is instantiated, mainpanel is initialized
 		username = name;
 		aBudget = new Budget(name);
-		//Popup panelTest = new MainPanel();
+		Popup panelTest = new MainPanel();
 		//panelTest.setPointer(this);
-		Categories categories = new Categories();	
+		//Categories categories = new Categories();	
 	}
 	
 	
@@ -39,6 +39,7 @@ public class BudgetPercept {
 		//used to pass the BudgetList to SubPanel
 		return aBudget.BudgetList;
 	}
+	
 	
 	
 }

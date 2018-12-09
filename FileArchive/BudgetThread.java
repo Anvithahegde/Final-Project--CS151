@@ -1,5 +1,3 @@
-package budgetPackage;
-
 public class BudgetThread {
 
 	//The purpose of this thread is to demonstrate multithreading

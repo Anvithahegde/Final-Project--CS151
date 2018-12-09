@@ -74,7 +74,7 @@ public class MainPanel extends Popup{
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//This button triggers the saving of current data
-				percept.saveData();
+				//percept.saveData();
 			}});
 		setLayout(saveButton,2,4,2,1,20);
 	}

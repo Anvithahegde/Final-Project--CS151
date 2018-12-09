@@ -1,0 +1,1 @@
+This folder is meant to hold retired classes from the development of this project for future reference. The classes in this folder are in no way to be considered part of the final program.

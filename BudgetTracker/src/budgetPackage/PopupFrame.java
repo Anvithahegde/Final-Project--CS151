@@ -19,7 +19,7 @@ public class PopupFrame extends JFrame{
         this.setResizable(true);
         this.addWindowListener(new WindowAdapter() {
         	public void windowClosing(WindowEvent e) {
-                //P.frameAbort();
+        		System.exit(1);
         		// Note: JFrame.EXIT_ON_CLOSE stops ALL threads.  
                 //When this function is phased out, alternate thread-terminating functions should be introduced
         	}
