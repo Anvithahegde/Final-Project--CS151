@@ -25,7 +25,7 @@ public class Login extends Popup{
 	@Override
 	public void setContents() {
 		WeightXY(1,1);
-		inputField = new JTextField(20);
+		inputField = new JTextField();
 		inputField.addKeyListener(new KeyListener(){
 		    public void keyPressed(KeyEvent e){
 		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
@@ -44,14 +44,14 @@ public class Login extends Popup{
 		    }
 		});
 		
-		setLayout(inputField,0,1,1,1);
+		setLayout(inputField,0,1,1,1,20);
 		textArea = new JTextArea();
 		textArea.setEditable(false);
 		textArea.setText("Enter a username please");
-		setLayout(textArea,0,0,1,1);
+		setLayout(textArea,0,0,1,1,20);
 		inputButton = new JButton();
 		inputButton.setText("Enter");
-		setLayout(inputButton,0,2,1,1);
+		setLayout(inputButton,0,2,1,1,20);
 		inputButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String text = inputField.getText();

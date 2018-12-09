@@ -46,13 +46,13 @@ public abstract class Popup extends JPanel{
 		gbc.weighty = y;
 	}
 	
-	protected void setLayout(Component c, int x, int y, int xx, int yy) {//, int xx, int yy
+	protected void setLayout(Component c, int x, int y, int xx, int yy, int textsize) {//, int xx, int yy
 		gbc.gridx = x;
 		gbc.gridy = y;
 		gbc.gridwidth = xx;
 		gbc.gridheight = yy;
 		gbc.fill = GridBagConstraints.BOTH;//HORIZONTAL
-		c.setFont(new Font("Ariel",Font.PLAIN, 20));
+		c.setFont(new Font("Ariel",Font.PLAIN, textsize));
 		this.add(c,gbc);
 	}
 	
