@@ -15,7 +15,7 @@ public class BudgetPercept {
 			login.setPointer(this);
 		}
 		else if (debugmode == 1) {
-			Popup panelTest = new MainPanel();
+			Popup mainUI = new MainPanel();
 		}
 	}
 	
@@ -24,8 +24,8 @@ public class BudgetPercept {
 		//Budget is instantiated, mainpanel is initialized
 		username = name;
 		aBudget = new Budget(name);
-		Popup panelTest = new MainPanel();
-		//panelTest.setPointer(this);
+		Popup mainUI = new MainPanel();
+		mainUI.setPointer(this);
 		//Categories categories = new Categories();	
 	}
 	
@@ -39,7 +39,5 @@ public class BudgetPercept {
 		//used to pass the BudgetList to SubPanel
 		return aBudget.BudgetList;
 	}
-	
-	
 	
 }

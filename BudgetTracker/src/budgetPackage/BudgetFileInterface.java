@@ -13,15 +13,17 @@ import java.util.ArrayList;
 
 public class BudgetFileInterface {
 	
+	String name;
+	
 	//NOTE: This class has not been fully integrated with this project yet.
 	
 	
 	public void CreateFile(){
 		//Creates a blank file, if one does not already exist
 		try {
-			Path path = Paths.get("events.txt");
+			Path path = Paths.get(name + ".txt");
 			if (Files.notExists(path)) {
-				File f = new File("events.txt"); 
+				File f = new File(name + ".txt"); 
 				f.createNewFile();
 			}
 		}
@@ -37,11 +39,12 @@ public class BudgetFileInterface {
 			}
 		else return false;
 	}
-	public ArrayList<String> ReadFile() throws IOException{
+	public ArrayList<String> ReadFile(String name) throws IOException{
 		//read all events out to memory for listing
+		this.name = name;
 		ArrayList<String> words = new ArrayList<String>();
 		CreateFile();
-		BufferedReader reader = new BufferedReader(new FileReader("events.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader(name + ".txt"));
 		String line;
 		while ((line = reader.readLine()) != null) {
 			words.add(line);
@@ -51,13 +54,13 @@ public class BudgetFileInterface {
 	}
 	public void Write2File(String text) throws FileNotFoundException{
 			//write current event to file and save
-		try(  PrintWriter out = new PrintWriter( "events.txt" )  ){
+		try(  PrintWriter out = new PrintWriter(name + ".txt")  ){
 			out.println( text );
 		}
 	}
 	public void RewriteFile(ArrayList<String> arrData) throws IOException{
 		//list and save -- rewrite file with all events in chron order and save
-		FileWriter writer = new FileWriter("events.txt");
+		FileWriter writer = new FileWriter(name + ".txt");
 			int size = arrData.size();
 			for (int i=0;i<size;i++) {
 				String str = arrData.get(i).toString();

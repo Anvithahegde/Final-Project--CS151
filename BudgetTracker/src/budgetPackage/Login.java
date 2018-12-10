@@ -27,6 +27,7 @@ public class Login extends Popup{
 		        	String text = inputField.getText();
 					if (text != ""){
 						percept.userEntry(text);
+						declareUnclosing();
 						closeThisFrame();
 					}
 		        }
@@ -48,6 +49,7 @@ public class Login extends Popup{
 				String text = inputField.getText();
 				if (text != ""){
 					percept.userEntry(text);
+					declareUnclosing();
 					closeThisFrame();
 				}
 			}

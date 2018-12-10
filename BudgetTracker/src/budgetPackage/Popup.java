@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
@@ -68,5 +69,10 @@ public abstract class Popup extends JPanel{
 	public void setPointer(BudgetPercept p) {
 		//Used to set pointer to parent class (BudgetPercept)
 		this.percept = p;
+	}
+	
+	public void declareUnclosing() {
+		//this is used to add system.exit to popup close
+		this.thisFrame.removeWindowListener(this.thisFrame.getWindowListeners()[0]);
 	}
 }
